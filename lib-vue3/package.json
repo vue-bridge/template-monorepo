@@ -2,10 +2,48 @@
   "name": "example-vue-library-vue3",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "vue-tsc --noEmit && vite build",
+    "test": "vitest --reporter=verbose --run",
+    "test-watch": "vitest --reporter=verbose",
     "preview": "vite preview"
   },
+  "main": "dist/index.vue3.cjs.cjs",
+  "module": "dist/index.vue3.es.js",
+  "typings": "./typings/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.vue3.d.ts",
+      "script": "./dist/index.vue3.iife.js",
+      "import": "./dist/index.vue3.es.js",
+      "require": "./dist/index.vue3.cjs.cjs",
+      "default": "./dist/index.vue3.es.js"
+    },
+    "./vue3": {
+      "types": "./index.vue3.d.ts",
+      "script": "./dist/index.vue3.iife.js",
+      "import": "./dist/index.vue3.es.js",
+      "require": "./dist/index.vue3.cjs.cjs",
+      "default": "./dist/index.vue3.es.js"
+    },
+    "./vue2": {
+      "types": "./index.vue2.d.ts",
+      "script": "./dist/index.vue2.iife.js",
+      "import": "./dist/index.vue2.es.js",
+      "require": "./dist/index.vue2.cjs.cjs",
+      "default": "./dist/index.vue2.es.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./src/": "./src/",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "typings",
+    "index.vue2.d.ts",
+    "README.md"
+  ],
   "dependencies": {
     "@vue-bridge/runtime": "^0.0.6"
   },

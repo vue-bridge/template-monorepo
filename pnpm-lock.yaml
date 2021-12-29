@@ -26,6 +26,8 @@ importers:
     specifiers:
       '@vue-bridge/runtime': ^0.0.6
       '@vue-bridge/testing': ^0.1.0
+      '@vue/composition-api': ^1.4.3
+      '@vue/runtime-dom': latest
       '@vue/test-utils': ^1.3.0
       jsdom: ^19.0.0
       typescript: ^4.4.4
@@ -36,9 +38,11 @@ importers:
       vue-template-compiler: ^2.6.14
       vue-tsc: ^0.30.0
     dependencies:
-      '@vue-bridge/runtime': 0.0.6_vue@2.6.14
+      '@vue-bridge/runtime': 0.0.6_e5303bfcb7b5c4dcf864c0d0a9aab3b4
     devDependencies:
       '@vue-bridge/testing': 0.1.0_@vue+test-utils@1.3.0
+      '@vue/composition-api': 1.4.3_vue@2.6.14
+      '@vue/runtime-dom': 3.2.26
       '@vue/test-utils': 1.3.0_9065e7474e033a8e4b95615fc8e6c36c
       jsdom: 19.0.0
       typescript: 4.5.4
@@ -691,7 +695,7 @@ packages:
       eslint-plugin-vue: 8.2.0_eslint@8.5.0
     dev: true
 
-  /@vue-bridge/runtime/0.0.6_vue@2.6.14:
+  /@vue-bridge/runtime/0.0.6_e5303bfcb7b5c4dcf864c0d0a9aab3b4:
     resolution: {integrity: sha512-4o1NQlNWWkAS9XMAd/lT30wVqxDpd0IlWKis0sMqzuJ/YA1fvdz1ANtzqwLu/ne7MBRzW1JZ7vbMfs1LG0i0Kw==}
     hasBin: true
     requiresBuild: true
@@ -704,6 +708,7 @@ packages:
       vue:
         optional: true
     dependencies:
+      '@vue/composition-api': 1.4.3_vue@2.6.14
       tslib: 2.3.1
       vue: 2.6.14
     dev: false
@@ -893,6 +898,15 @@ packages:
       vue-template-es2015-compiler: 1.9.1
     optionalDependencies:
       prettier: 2.5.1
+    dev: true
+
+  /@vue/composition-api/1.4.3_vue@2.6.14:
+    resolution: {integrity: sha512-Qp4rMbESO05/7/Imck027X5lPhbmMX/mtYSDvIMJ14PS4KHY/4GllnQbPEfsBEe1LECFE6HWx2k7HYgcuYNvpg==}
+    peerDependencies:
+      vue: '>= 2.5 < 3'
+    dependencies:
+      tslib: 2.3.1
+      vue: 2.6.14
     dev: true
 
   /@vue/reactivity-transform/3.2.26:

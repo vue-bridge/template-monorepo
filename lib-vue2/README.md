@@ -1,11 +1,11 @@
-# Vue 3 + Typescript + Vite
+# Vue 2 Compat Build Package
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This package is the Vue 2 version of your library. In it's current configuration, it's not intended to be published itself. Rather, it's used as a separate workspace holding all the Vue 2 related dependencies and manage the build process for the Vue 2 version of your library.
 
-## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## Things to be aware of.
 
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+* The build artifacts are output in `/lib-vue3/dist-vue2`, so that both the Vue 2 and Vue 3 build can be published as one package.
+* The src folder is just a symlink to `/lib-vue3/src`. So both packages share the same source.
+* We 
+* You need to synchronize the dependencies between both packages. if you add a new dependency to `/lib-vue3`, you likely also want to install it here. pnpm can help doing that in a single command: running i.e. `pnpm add lodash-es -r` in the project root will add the package `lodash-es` as a dependencies to both `/lib-vue2` and `/lib-vue3`.

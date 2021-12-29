@@ -1,4 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import MyInput from "./MyInput.vue";
+import type { App } from "@vue-bridge/runtime";
+export { MyInput };
 
-createApp(App).mount('#app')
+export function install(app: App) {
+  app.component(MyInput.name, MyInput);
+}

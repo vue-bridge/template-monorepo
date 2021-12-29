@@ -18,14 +18,15 @@ export const buildConfig = (_options?: VueBridgeBuildOptions): UserConfig["build
     lib: {
       entry: "src/main.ts",
       formats: ["es", "cjs", "iife"],
-      fileName: (format) => `index.${options.version}.${format}.${format === "cjs" ? "cjs" : "js"}`,
+      fileName: (format) =>
+        `index.${format}.${format === "cjs" ? "cjs" : "js"}`,
     },
     rollupOptions: {
       output: {
-        name: 'ExampleVueLibrary',
-        exports: 'named', // this means your main.ts file should only have named exports!
+        name: "ExampleVueLibrary",
+        exports: "named", // this means your main.ts file should only have named exports!
       },
       external: ["vue", "@vue-bridge/runtime"],
     },
-  }
+  };
 };
