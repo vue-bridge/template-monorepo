@@ -1,0 +1,3 @@
+packages:
+  - 'lib-vue3'
+  - 'lib-vue2'
