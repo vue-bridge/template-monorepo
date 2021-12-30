@@ -29,4 +29,7 @@ export default defineConfig({
     outDir: "../lib-vue3/dist-vue2",
     version: "vue2",
   }),
+  test: {
+    environment: "jsdom",
+  },
 });

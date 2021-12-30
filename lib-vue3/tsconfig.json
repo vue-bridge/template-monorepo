@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl":".",
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -12,6 +13,7 @@
     "lib": ["esnext", "dom"],
     "declaration": true,
     "declarationDir": "./typings",
+    "skipLibCheck": true,
     "paths": {
       "@vue-bridge/runtime": ["node_modules/@vue-bridge/runtime/typings/vue3"]
     }

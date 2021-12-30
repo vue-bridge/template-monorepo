@@ -6,5 +6,6 @@ dist-ssr
 lib-vue2/dist
 lib-vue3/dist
 lib-vue3/dist-vue2
+lib-vue3/typings
 
 *.local

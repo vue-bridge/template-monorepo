@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -10,6 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
     "paths": {
       "@vue-bridge/runtime": ["node_modules/@vue-bridge/runtime/typings/vue2"]
     }

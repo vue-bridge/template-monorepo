@@ -1,4 +1,4 @@
-import MyInput from "./MyInput.vue";
+import MyInput from "./components/MyInput.vue";
 import type { App } from "@vue-bridge/runtime";
 export { MyInput };
 
