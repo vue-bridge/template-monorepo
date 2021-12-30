@@ -1,8 +1,12 @@
 import path from "path";
 import { defineConfig } from "vite";
 import { createVuePlugin as vue } from "vite-plugin-vue2";
-import { buildConfig } from "../lib-vue3/vite.config.lib";
+import { buildConfig } from "../vite.config.shared";
 import { dependencies, devDependencies } from "./package.json";
+
+// This is the name of the global you library is accessibkle in the iife build
+// (window.ExampleLibrary)
+const libraryGlobalName = "ExampleLibrary";
 
 const localResolveDeps = () => {
   const pkgs = [
@@ -26,8 +30,9 @@ export default defineConfig({
     },
   },
   build: buildConfig({
-    outDir: "../lib-vue3/dist-vue2",
     version: "vue2",
+    name: libraryGlobalName,
+    outDir: "../lib-vue3/dist-vue2",
   }),
   test: {
     environment: "jsdom",

@@ -6,8 +6,7 @@
     "dev": "vite build --watch",
     "build": "vite build",
     "test": "vitest --reporter=verbose --run",
-    "test-watch": "vitest --reporter=verbose",
-    "preview": "vite preview"
+    "test-watch": "vitest --reporter=verbose"
   },
   "dependencies": {
     "@vue-bridge/runtime": "^0.0.6"
