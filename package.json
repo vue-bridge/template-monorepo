@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "dev-all": "pnpm run dev -r --stream",
-    "build-all": "pnpm run build -r --parallel --aggregateOutput",
-    "test-all": "pnpm run test -r --parallel --aggregateOutput",
+    "build-all": "pnpm run build -r --parallel --aggregate-output",
+    "test-all": "pnpm run test -r --parallel --aggregate-output",
     "lint": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}'",
     "lint:fix": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}' --fix",
     "release": "pnpm test-all && pnpm build-all && pnpm publish"
@@ -20,7 +20,10 @@
     "@vue-bridge/eslint-config": "^0.1.0",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "jsdom": "^19.0.0",
     "tslib": "^2.3.1",
-    "typescript": "~4.5"
+    "typescript": "~4.5",
+    "vite": "^2.7.10",
+    "vitest": "^0.0.124"
   }
 }
