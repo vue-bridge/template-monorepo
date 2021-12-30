@@ -5,11 +5,15 @@ import Input from "../components/Input.vue";
 describe("Input", () => {
   it("v-model works", async () => {
     const newValue = "Hello You!";
+
+    // mount() has the sameAPI as `@vue/test-utils@2` (for Vue 3)
     const wrapper = mount(Input, {
       props: {
         modelValue: "Hello World",
       },
     });
+
+    // We use `nextTick` from `@vue-bridge/testing` because we can't import it in an interoperable way from 'vue'
     await nextTick();
 
     const input = wrapper.find("input");

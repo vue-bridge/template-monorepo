@@ -8,30 +8,33 @@
     "test-watch": "vitest --reporter=verbose",
     "preview": "vite preview"
   },
-  "main": "dist/index.vue3.cjs.cjs",
-  "module": "dist/index.vue3.es.js",
+  "type": "module",
+  "main": "dist/index.cjs.cjs",
+  "module": "dist/index.es.js",
+  "jsdelivr": "dist/index.iife.js",
+  "unpkg": "dist/index.iife.js",
   "typings": "./typings/main.d.ts",
   "exports": {
     ".": {
-      "types": "./index.vue3.d.ts",
-      "script": "./dist/index.vue3.iife.js",
-      "import": "./dist/index.vue3.es.js",
-      "require": "./dist/index.vue3.cjs.cjs",
-      "default": "./dist/index.vue3.es.js"
+      "types": "./index.d.ts",
+      "script": "./dist/index.iife.js",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.cjs",
+      "default": "./dist/index.es.js"
     },
     "./vue3": {
-      "types": "./index.vue3.d.ts",
-      "script": "./dist/index.vue3.iife.js",
-      "import": "./dist/index.vue3.es.js",
-      "require": "./dist/index.vue3.cjs.cjs",
-      "default": "./dist/index.vue3.es.js"
+      "types": "./index.d.ts",
+      "script": "./dist/index.iife.js",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.cjs",
+      "default": "./dist/index.es.js"
     },
     "./vue2": {
-      "types": "./index.vue2.d.ts",
-      "script": "./dist/index.vue2.iife.js",
-      "import": "./dist/index.vue2.es.js",
-      "require": "./dist/index.vue2.cjs.cjs",
-      "default": "./dist/index.vue2.es.js"
+      "types": "./index.d.ts",
+      "script": "./dist-vue2/index.iife.js",
+      "import": "./dist-vue2/index.es.js",
+      "require": "./dist-vue2/index.cjs.cjs",
+      "default": "./dist-vue2/index.es.js"
     },
     "./style.css": "./dist/style.css",
     "./src/": "./src/",
