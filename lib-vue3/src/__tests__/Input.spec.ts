@@ -8,6 +8,7 @@ describe("Input", () => {
 
     // mount() has the sameAPI as `@vue/test-utils@2` (for Vue 3)
     const wrapper = mount(Input, {
+      // @ts-ignore - would be propsData in normal vue 2 test-utils
       props: {
         modelValue: "Hello World",
       },
@@ -18,7 +19,7 @@ describe("Input", () => {
 
     const input = wrapper.find("input");
     expect(wrapper.props().modelValue).toBe("Hello World");
-    expect(wrapper.vm.model).toBe("Hello World");
+    expect((wrapper.vm as any).model).toBe("Hello World");
     expect((input!.element as HTMLInputElement).value).toBe("Hello World");
 
     input.setValue(newValue);
