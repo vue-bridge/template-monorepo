@@ -18,7 +18,6 @@
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "@vue-bridge/eslint-config": "^0.1.0",
-    "@vue-bridge/vite-plugin": "^0.0.5",
     "eslint": "^8.6.0",
     "eslint-plugin-vue": "^8.2.0",
     "jsdom": "^19.0.0",

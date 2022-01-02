@@ -8,7 +8,6 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.8.1
       '@typescript-eslint/parser': ^5.8.1
       '@vue-bridge/eslint-config': ^0.1.0
-      '@vue-bridge/vite-plugin': ^0.0.5
       eslint: ^8.6.0
       eslint-plugin-vue: ^8.2.0
       jsdom: ^19.0.0
@@ -21,7 +20,6 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.8.1_13039593e64cd539d0b4c5c2da390958
       '@typescript-eslint/parser': 5.8.1_eslint@8.6.0+typescript@4.5.4
       '@vue-bridge/eslint-config': 0.1.0_0714c12e973e341e22d452ad77d94000
-      '@vue-bridge/vite-plugin': 0.0.5_vite@2.7.10
       eslint: 8.6.0
       eslint-plugin-vue: 8.2.0_eslint@8.6.0
       jsdom: 19.0.0
@@ -34,7 +32,7 @@ importers:
     specifiers:
       '@vue-bridge/runtime': ^0.0.8
       '@vue-bridge/testing': ^0.1.1
-      '@vue-bridge/vite-plugin': ^0.0.5
+      '@vue-bridge/vite-plugin': ^0.0.6
       '@vue/composition-api': ^1.4.3
       '@vue/runtime-dom': latest
       '@vue/test-utils': ^1.3.0
@@ -48,7 +46,7 @@ importers:
       '@vue-bridge/runtime': 0.0.8_e5303bfcb7b5c4dcf864c0d0a9aab3b4
     devDependencies:
       '@vue-bridge/testing': 0.1.1_@vue+test-utils@1.3.0
-      '@vue-bridge/vite-plugin': 0.0.5_vite@2.7.10
+      '@vue-bridge/vite-plugin': 0.0.6_vite@2.7.10
       '@vue/composition-api': 1.4.3_vue@2.6.14
       '@vue/runtime-dom': 3.2.26
       '@vue/test-utils': 1.3.0_9065e7474e033a8e4b95615fc8e6c36c
@@ -64,7 +62,7 @@ importers:
       '@vitejs/plugin-vue': ^2.0.0
       '@vue-bridge/runtime': ^0.0.8
       '@vue-bridge/testing': ^0.1.1
-      '@vue-bridge/vite-plugin': ^0.0.5
+      '@vue-bridge/vite-plugin': ^0.0.6
       '@vue/test-utils': ^2.0.0-rc.18
       typescript: ^4.4.4
       vue: ^3.2.25
@@ -74,7 +72,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue': 2.0.1_vite@2.7.10+vue@3.2.26
       '@vue-bridge/testing': 0.1.1_@vue+test-utils@2.0.0-rc.18
-      '@vue-bridge/vite-plugin': 0.0.5_vite@2.7.10
+      '@vue-bridge/vite-plugin': 0.0.6_vite@2.7.10
       '@vue/test-utils': 2.0.0-rc.18_vue@3.2.26
       typescript: 4.5.4
       vue: 3.2.26
@@ -754,8 +752,8 @@ packages:
       '@vue/test-utils': 2.0.0-rc.18_vue@3.2.26
     dev: true
 
-  /@vue-bridge/vite-plugin/0.0.5_vite@2.7.10:
-    resolution: {integrity: sha512-lsRsbZEzqoggBp429m2z0DA6nf5XxLGuSc2UkiFFQYprCaYF1j9MBYV0VDolGJDY/ct1YNheLDjj5IO6v3+siw==}
+  /@vue-bridge/vite-plugin/0.0.6_vite@2.7.10:
+    resolution: {integrity: sha512-7g9avHxOtTEWNxrY1Vl9Lcr5JwTmqgUAsCdC89/KXBcp9n+BVinAuKYKM74IFmeYP95Vvrc1Ihw9al1ltEgQpQ==}
     peerDependencies:
       vite: ^2.7.9
     peerDependenciesMeta:
