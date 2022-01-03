@@ -2,14 +2,12 @@
 import type { UserConfig } from "vite";
 
 export interface VueBridgeBuildOptions {
-  version: "vue2" | "vue3";
   name: string;
   outDir?: string;
 }
 
 const defaults: Partial<VueBridgeBuildOptions> = {
   outDir: "dist",
-  version: "vue3",
 };
 
 export const buildConfig = (

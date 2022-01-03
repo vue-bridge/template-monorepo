@@ -22,9 +22,7 @@ export default defineConfig({
     },
   },
   build: buildConfig({
-    version: "vue2",
     name: libraryGlobalName,
-    outDir: "../lib-vue3/dist-vue2",
   }),
   test: {
     environment: "jsdom",

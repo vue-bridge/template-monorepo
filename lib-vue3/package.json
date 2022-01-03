@@ -17,35 +17,20 @@
   "typings": "./typings/main.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
+      "types": "./typings/main.d.ts",
       "script": "./dist/index.iife.js",
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.cjs",
       "default": "./dist/index.es.js"
-    },
-    "./vue3": {
-      "types": "./index.d.ts",
-      "script": "./dist/index.iife.js",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.cjs",
-      "default": "./dist/index.es.js"
-    },
-    "./vue2": {
-      "types": "./index.d.ts",
-      "script": "./dist-vue2/index.iife.js",
-      "import": "./dist-vue2/index.es.js",
-      "require": "./dist-vue2/index.cjs.cjs",
-      "default": "./dist-vue2/index.es.js"
     },
     "./style.css": "./dist/style.css",
-    "./src/": "./src/",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./src/": "./src/"
   },
   "files": [
     "dist",
     "src",
     "typings",
-    "index.vue2.d.ts",
     "README.md"
   ],
   "dependencies": {
@@ -54,7 +39,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "@vue-bridge/testing": "^0.1.1",
-    "@vue-bridge/vite-plugin": "^0.0.6",
+    "@vue-bridge/vite-plugin": "^0.0.7",
     "@vue/test-utils": "^2.0.0-rc.18",
     "typescript": "^4.4.4",
     "vue": "^3.2.25",
