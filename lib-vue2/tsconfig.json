@@ -12,9 +12,14 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
+
+    "declaration": true,
+    "declarationDir": "typings",
+
     "paths": {
       "@vue-bridge/runtime": ["node_modules/@vue-bridge/runtime/typings/vue2"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["src/**/*.spec.ts"]
 }

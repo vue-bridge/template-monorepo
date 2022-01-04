@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && pnpm copy-src",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "build:w": "vite build --watch",
     "copy-src": "cpy ../lib-vue3/src/* ./dist/src",
     "test": "vitest --reporter=verbose --run",
@@ -14,10 +14,10 @@
   "module": "dist/index.es.js",
   "jsdelivr": "dist/index.iife.js",
   "unpkg": "dist/index.iife.js",
-  "typings": "./index.d.ts",
+  "typings": "./typings/main.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
+      "types": "./typings/main.d.ts",
       "script": "./dist/index.iife.js",
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.cjs",
@@ -47,7 +47,7 @@
     "vitest": "^0.0.129",
     "vue": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "vue-tsc": "^0.30.0"
+    "vue-tsc": "^0.30.1"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
