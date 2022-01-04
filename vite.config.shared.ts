@@ -1,6 +1,7 @@
 /// <reference types="vite" />
 import type { UserConfig } from "vite";
 
+
 export interface VueBridgeBuildOptions {
   name: string;
   outDir?: string;
@@ -14,8 +15,10 @@ export const buildConfig = (
   _options: VueBridgeBuildOptions
 ): UserConfig["build"] => {
   const options = Object.assign({}, defaults, _options);
+
   return {
     outDir: options.outDir,
+
     lib: {
       entry: "src/main.ts",
       formats: ["es", "cjs", "iife"],
@@ -23,6 +26,7 @@ export const buildConfig = (
       fileName: (format) =>
         `index.${format}.${format === "cjs" ? "cjs" : "js"}`,
     },
+
     rollupOptions: {
       output: {
         exports: "named", // this means your main.ts file should only have named exports!
@@ -34,7 +38,7 @@ export const buildConfig = (
           "@vue-bridge/runtime": "VueBridge",
         },
       },
-      external: ["vue", "@vue-bridge/runtime"],
+      external: ["vue", "@vue-bridge/runtime", "@vue/composition-api"],
     },
   };
 };
