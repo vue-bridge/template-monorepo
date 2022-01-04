@@ -2,7 +2,8 @@
   "name": "example-vue-library-vue3",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite build --watch",
+    "dev": "vite",
+    "build:w": "vite build --watch",
     "build": "vite build && pnpm build-types",
     "build-types": "vue-tsc --emitDeclarationOnly",
     "test": "vitest --reporter=verbose --run",

@@ -1,6 +1,14 @@
 {
   "name": "example-vue-library-vue2",
   "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && pnpm copy-src",
+    "build:w": "vite build --watch",
+    "copy-src": "cpy ../lib-vue3/src/* ./dist/src",
+    "test": "vitest --reporter=verbose --run",
+    "test-watch": "vitest --reporter=verbose"
+  },
   "type": "module",
   "main": "dist/index.cjs.cjs",
   "module": "dist/index.es.js",
@@ -24,13 +32,6 @@
     "index.d.ts",
     "README.md"
   ],
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build && pnpm copy-src",
-    "copy-src": "cpy ../lib-vue3/src/* ./dist/src",
-    "test": "vitest --reporter=verbose --run",
-    "test-watch": "vitest --reporter=verbose"
-  },
   "dependencies": {
     "@vue-bridge/runtime": "^0.0.8"
   },

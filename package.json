@@ -3,7 +3,9 @@
   "private": true,
   "description": "",
   "scripts": {
-    "dev-all": "pnpm run dev -r --stream",
+    "dev-vue3": "pnpm run dev --filter=example-vue-library-vue3",
+    "dev-vue2": "pnpm run dev --filter=example-vue-library-vue2",
+    "build-watch-all": "pnpm run build:w -r --stream",
     "build-all": "pnpm run build -r --parallel --aggregate-output",
     "test-all": "pnpm run test -r --parallel --aggregate-output",
     "lint": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}'",
