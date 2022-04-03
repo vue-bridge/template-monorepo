@@ -1,12 +1,12 @@
 {
-  "name": "vue-bridge-monorepo-template",
+  "name": "@vue-bridge/template-monorepo",
   "private": true,
   "description": "",
   "scripts": {
     "dev-vue3": "pnpm run dev --filter=example-vue-library-vue3",
     "dev-vue2": "pnpm run dev --filter=example-vue-library-vue2",
-    "build-watch-all": "pnpm run build:w -r --stream",
     "build-all": "pnpm run build -r --parallel --aggregate-output",
+    "build-watch-all": "pnpm run build:w -r --stream",
     "test-all": "pnpm run test -r --parallel --aggregate-output",
     "lint": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}'",
     "lint:fix": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}' --fix",
@@ -16,16 +16,16 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^17.0.7",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
-    "@vue-bridge/eslint-config": "^0.1.0",
-    "eslint": "^8.6.0",
-    "eslint-plugin-vue": "^8.2.0",
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "@vue-bridge/eslint-config": "^0.1.1",
+    "eslint": "^8.12.0",
+    "eslint-plugin-vue": "^8.5.0",
     "jsdom": "^19.0.0",
     "tslib": "^2.3.1",
-    "typescript": "~4.5",
-    "vite": "^2.7.10",
-    "vitest": "^0.0.134"
+    "typescript": "~4.6.3",
+    "vite": "^2.9.1",
+    "vitest": "^0.8.4"
   }
 }
