@@ -1,64 +1,157 @@
-# Vue-Bridge Library Template
+# Vue-Bridge Template
 
-Congrats!
+> Full Documentation for Vue-Bridge can be found at https://vue-bridge-docs.netlify.app
+## Features of this template
 
-> Documentation will be found at https://www.vue-bridge.dev someday in the not too distance future
-
-## Features
-
-*  Build, Test and Publish a component library for both Vue 2 and Vue 3 from **one* codebase
-* Typescript
-* Linting with Eslint 8
+*  Build, Test and Publish a component library for both Vue 2 and Vue 3 from *one* codebase
+* Workspaces with [PNPM](https://www.pnpm.io)
+* [Typescript](https://www.typescriptlang.org) (Easily [removable](#removing-typescript) for JS-Users)
+* Linting with [Eslint](https://) 8
 * Unit-Tests with [Vitest](https://vitest.dev)
-* _TODO_: E2E Tests with Cypress
 * Bundling and local dev with [Vite](https://vitejs.dev)
 * Interoperability supported by the `@vue-bridge/*` packages:
   * `@vue-bridge/eslint-config` : eslint rules that support you in writing interoperable code
   * `@vue-bridge/runtime`       : tiny runtime enhancements for interoperability between Vue 2 and  Vue 3
+  * `@vue-bridge/vite-plugin`   : Vite plugin for build-time optimizations
   * `@vue-bridge/testing`       : Harmonized API for `@vue/test-utils` versions `1` and `2`
+
+Roadmap TODOs:
+
+* _TODO_ ⚙️: E2E Tests with Cypress
 
 ## Getting Started
 
 Make sure to go through this list to have a smooth start. 
-We recommend starting with the docs at `https://vue-bridge.dev`, but you can also dive right into this repo and come back to the docs whenever you need them.
+We recommend starting with the docs at `https://vue-bridge-docs.netlify.app`, but you can also dive right into this repo and come back to the docs whenever you need them.
 
 
 - [ ] Install dependencies by running `pnpm i`. Not using pnpm yet? Get started at https://pnpm.io
 - [ ] Give this monorepo a proper name, description and your author details (`/package.json`)
-- [ ] Give your packages a proper name, description and your author details (`/lib-vueX/package.json`)
-- [ ] give your package a real global Name in each `vite.config.ts` (look for the `libraryGlobalName` - it should be the **same** in both configs)
-- [ ] Add your name to the LICENSE files in the root folder as well as the package folders (`/lib-*`)
-- [ ] Add your name as the `"author"` in the root `package.json` as well as in both `/lib-` folders
+- [ ] Give your packages a proper name, description and your author details (`/lib-vue*/package.json`)
+- [ ] Give your package a real global Name in each `vite.config.ts` (look for the `libraryGlobalName` - it should be the **same** in both configs)
+- [ ] Add your name to the LICENSE files in the root folder as well as the package folders (`/lib-vue*`)
 - [ ] Run `pnpm build-all` and inspect the build output in `/lib-vue{2,3}/dist`. Take a look at the package exports defined in `package.json` to get a picture of what's being exported by your package.
+- [ ] Congrats, you're ready - start coding!
+
+
+## Recommended Reading
+
+TODO: Links to Vue-Bridge docs
+
+## Project Structure
+
+This is an overview meant to give you an idea about the general layout and the important files and folders. Some files and folders left out for brevity
+```
+lib-vue2/
+├─ app/               # Symlink to /lib-vue3/app
+├─ dist/              # `pnpm build` output of Vue 2 version of library
+├─ typings/           # generated type declarations of this version
+├─ src/               # Symlink to /lib-vue3/src
+├─ index.html         # Entry point for demo app (`pnpm dev`)
+├─ package.json       # contains Vue 2 dev deps and runtime deps
+├─ vite.config.js     # Build & test config for Vue 2 version
+
+lib-vue3/
+├─ app/               # Demo application consuming /src, for Vue2&3
+├─ dist/              # build output of Vue 3 version of library
+├─ src/               # Source files of your library
+├─ index.html         # Entry point for demo app (`pnpm dev`)
+├─ package.json       # contains Vue 3 dev deps and runtime deps
+├─ vite.config.js     # Build & test config for Vue 2 version
+
+package.json          # contains shared dev dependencies a d scripts
+pnpm-workspace.yaml   # Config of workspace directories
+vite.config.shared.js # shared config for vite used by both packages
+```
 
 ## Commands
 
-These are the commands you can run from the project root. you can find them in the root `package.json` most of them are just convenience commands running scripts in both packages (`/lib-vue2` && `/lib-vue3`)
+This template comes preconfigured with npm scripts to develop, test and build your library for Vue 3 and Vue 2 at the same time. Here's an overview:
 
-### `pnpm run dev-vue2` / `pnpm run dev-vue3`:
+### Root `package.json`
 
-Start a small app that you can use to demo/test/play with your library. This library lives in `/lib-vue3/app`, and is written using `@vue-bridge/runtime` so that you can write your demo app's components once for both Vue 2 and 3, just like your library.
+You can run the following commands from the project root.
 
-### `pnpm build-all`
+|Command|Description|
+|-------|-----------|
+| `pnpm dev-vue2` | Start a small app that you can use to demo/test/play with your library. See `/lib-vue2/app` |
+| `pnpm dev-vue3` | Start a small app that you can use to demo/test/play with your library. See `/lib-vue3/app` |
+| `pnpm build-all`| Build both packages, and generate type declarations |
+| `pnpm test-all` | Run unit tests in both packages |
+| `pnpm lint` | Run eslint on all files, with auto-fixing |
 
-Build both libraries with Vite. The trick is that `lib-vue2` symlinks the source folder from `/lib-vue3`, so both libraries use the same source files. Write once, built twice.
+## Commands in Workspaces (`/lib-vue2` & `/lib-vue3`)
 
-#### Watch mode
+These commands can be used in the two package directories. They are the same for both.
 
-You can alternatively run `build-watch-all` if you wnt to use vite's watch mode for re-running builds on src file changes.
+|Command            |Description|
+|-------------------|-----------|
+| `pnpm dev`        | Start a small app that you can use to demo/test/play with your library. |
+| `pnpm build`      | Build the package and generate type declarations |
+| `pnpm build-watch`| Build the package in watch mode, re-bundling on file changes |
+| `pnpm tsc-watch`  | run `vue-tsc` in watch mode, getting type checks run on file change |
+| `pnpm test`       | Run unit tests in both packages |
+| `pnpm test-watch` | Build both packages, and generate type declarations |
 
-### `pnpm test-all`
+## Workflow
 
-Runs unit tests for both libraries. Uses tests from the symlinked `/lib-vue3/src` folder for Vue 2 tests. Write tests once, run them against both Vue 2 and 3.
+Here's a rough outline of the workflow of developing:
 
-### `pnpm lint`
+* Edit source files in `/lib-vue3` to write your library.
+  * `pnpm dev` provides a dev-server with a demo app in which you can test your library/components with HMR.
+* Write Tests in `/lib-vue3/src/__tests__` using `@vite-bridge/testing` as a cross-compatible drop-in replacement for `@vue/test-utils`
+  * `pnpm test-watch` runs your tests in watch mode for instant feedback while writing your tests, thanks to Vitest.
+* If you want to run/test your library in Vue 2, you can run the same commands in `/lib-vue2` anytime.
+* To run all tests against both versions, you can use `pnpm test-all` from the root folder.
+* Build both packages, you can use `pnpm build-all` from the root folder,
+* After those commands have run, you can publish both packages. (We may provide guidance on this as well in the Vue-Bridge docs at a later time. PRs welcome)
 
-Run eslint on both projects
+## Typescript
 
-### Auto-Fix
+### Removing Typescript
 
-Runing `ünpm lint-fix`, eslint will fix all auto-fixable issues.
+1. Install the following dependencies from root:
 
-### `pnpm release`
+```json
+"devDependencies": {
+  "@types/node": "16",
+  "@typescript-eslint/eslint-plugin": "^5.23.0",
+  "@typescript-eslint/parser": "^5.23.0",
+  "tslib": "^2.4.0",
+  "typescript": "~4.6.4",
+}
+```
 
-Convenience command that builds your projects, runs all tests, and then runs `pnpm publish`
+2. remove Typescript from .eslintrc.cjs
+
+```diff
+module.exports = {
+  root: true,
+  extends: [
+    "eslint:recommended",
+-    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:vue/vue3-essential",
+    "@vue-bridge/eslint-config",
+  ],
+  parserOptions: {
+-    parser: require.resolve("@typescript-eslint/parser"),
+-     extraFileExtensions: [".vue"],
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+```
+
+3. remove all tsconfig*.json files, and replace them with a simple jsconfig.json in the project root:
+
+```json
+{
+  "include": [
+    "lib-*/src/**/*.{ts,tsx,js,jsx,vue}",
+    "lib-*/src/**/*.d.ts",
+    "lib-*/*.{js,ts}"
+  ]
+}
+```
+
+You can leave all of these *.ts references in there because Vite, using esbuild internally, can still deal with Typescript files and treat them as JS, basically.
