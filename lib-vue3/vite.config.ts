@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { buildConfig } from "../vite.config.shared";
 import { vueBridge } from "@vue-bridge/vite-plugin";
-// This is the name of the global you library is accessibkle in the iife build
+// This is the name of the global you library is accessible in the iife build (for CDN use)
 // (window.ExampleLibrary)
 const libraryGlobalName = "ExampleLibrary";
 

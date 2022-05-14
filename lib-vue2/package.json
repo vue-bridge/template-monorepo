@@ -3,33 +3,35 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "build:w": "vite build --watch",
-    "copy-src": "cpy ../lib-vue3/src/* ./dist/src",
+    "build": "vite build && pnpm build-types",
+    "build-watch": "vite build --watch",
+    "build-types": "vue-tsc --emitDeclarationOnly",
+    "tsc-watch": "vue-tsc --watch",
     "test": "vitest --reporter=verbose --run",
     "test-watch": "vitest --reporter=verbose"
   },
   "type": "module",
-  "main": "dist/index.cjs.cjs",
-  "module": "dist/index.es.js",
-  "jsdelivr": "dist/index.iife.js",
-  "unpkg": "dist/index.iife.js",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.es.mjs",
+  "jsdelivr": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
   "typings": "./typings/main.d.ts",
   "exports": {
     ".": {
       "types": "./typings/main.d.ts",
-      "script": "./dist/index.iife.js",
-      "import": "./dist/index.es.js",
+      "script": "./dist/index.umd.js",
+      "import": "./dist/index.es.mjs",
       "require": "./dist/index.cjs.cjs",
-      "default": "./dist/index.es.js"
+      "default": "./dist/index.umd.js"
     },
     "./style.css": "./dist/style.css",
     "./package.json": "./package.json",
-    "./src/": "./src/"
+    "./src/": "./src/",
+    "./typings/": "./typings/"
   },
   "files": [
     "dist",
-    "index.d.ts",
+    "src",
     "README.md"
   ],
   "dependencies": {
@@ -38,10 +40,10 @@
   "devDependencies": {
     "@vue-bridge/testing": "^0.1.2",
     "@vue-bridge/vite-plugin": "^0.1.0",
-    "@vue/composition-api": "^1.4.9",
-    "@vue/runtime-dom": "^3.2.31",
+    "@vue/composition-api": "^1.6.1",
+    "@vue/runtime-dom": "^3.2.33",
     "@vue/test-utils": "^1.3.0",
-    "vite-plugin-vue2": "^1.9.3",
+    "vite-plugin-vue2": "^2.0.0",
     "vue": "^2.6.14",
     "vue-template-compiler": "^2.6.14"
   },
