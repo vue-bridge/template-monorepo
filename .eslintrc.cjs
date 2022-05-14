@@ -20,7 +20,7 @@ module.exports = {
   overrides: [
     // Treat root js/ts files as node files
     {
-      files: ['*.{cjs,js,jsx,ts,tsx}', 'lib-*/**/*.{cjs,js,jsx,ts,tsx}'],
+      files: ['*.{cjs,js,jsx,ts,tsx}', 'lib-*/*.{cjs,js,jsx,ts,tsx}'],
       env: {
         node: true,
       },
