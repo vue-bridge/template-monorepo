@@ -14,13 +14,6 @@
     "lint": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}'",
     "lint:fix": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}' --fix"
   },
-  "pnpm": {
-    "packageExtensions": {
-      "vue-template-compiler": {
-        "peerDependencies": {}
-      }
-    }
-  },
   "devDependencies": {
     "@types/node": "16",
     "@typescript-eslint/eslint-plugin": "^5.23.0",

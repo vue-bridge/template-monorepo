@@ -1,5 +1,8 @@
 module.exports = {
   root: true,
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -13,9 +16,9 @@ module.exports = {
       jsx: true,
     },
   },
-
   env: {
     'vue/setup-compiler-macros': true,
+    es2022: true,
   },
   overrides: [
     // Treat root js/ts files as node files

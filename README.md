@@ -21,9 +21,20 @@ Roadmap TODOs:
 
 ## Getting Started
 
-Make sure to go through this list to have a smooth start. 
+Install the template by running the following command in a folder of your choice:
+
+```bash
+# create in the current directory:
+npx degit vue-bridge/template-monorepo
+# create in a new subfolder called "my-library":
+npx degit vue-bridge/template-monorepo my-library
+```
+
+...or just click the big green button labeled "use this template" in the github repo.
+
 We recommend starting with the docs at `https://vue-bridge-docs.netlify.app`, but you can also dive right into this repo and come back to the docs whenever you need them.
 
+At the very least, make sure to go through this short todo list and then read the rest of the README to have a smooth start. 
 
 - [ ] Install dependencies by running `pnpm i`. Not using pnpm yet? Get started at https://pnpm.io
 - [ ] Give this monorepo a proper name, description and your author details (`/package.json`)
@@ -106,7 +117,26 @@ Here's a rough outline of the workflow of developing:
 * Build both packages, you can use `pnpm build-all` from the root folder,
 * After those commands have run, you can publish both packages. (We may provide guidance on this as well in the Vue-Bridge docs at a later time. PRs welcome)
 
+## Dependencies
+
+When developing your library, you might need to introduce new dependencies, let's say [`lodah-es`](https://www.npmjs.com/package/lodash-es). You need to install this dependency in **both** packages, as you will build and publish both packages (provided you stick to the default config of this template).
+
+PNPM allows you to run commands on multiple package with [filters](https://pnpm.io/filtering), which is amazing. Herer are two usefule commands to add or remove dependencies to your two packages (the `--filter` matches the package names, so change it accordingly):
+
+```bash
+# Add dependency
+pnpm add --filter "example-vue-library-*" lodash-es
+# Add dev dependency
+pnpm add -D --filter "example-vue-library-*" lodash-es
+# Remoe dependency
+pnpm remove --filter "example-vue-library-*" lodash-es
+```
+
 ## Typescript
+
+This template comes with Typescript support pre-configured. Vite & Vitest can read TS out of the box, but don't do type-checking or generate declaration files. For that, we use `vue-tsc`.
+
+The tsconfig file structure was taken from the official [`create-vue`](https://github.com/vuejs/create-vue) package, so if you already created a Vue 3 project with that tool, it should look familiar.
 
 ### Removing Typescript
 
