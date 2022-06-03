@@ -6,11 +6,11 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "dev-vue3": "pnpm run dev --filter=example-vue-library-vue3",
-    "dev-vue2": "pnpm run dev --filter=example-vue-library-vue2",
-    "build-all": "pnpm run build -r --aggregate-output",
-    "build-watch-all": "pnpm run build:w -r --stream",
-    "test-all": "pnpm run test -r --parallel --aggregate-output",
+    "dev-vue3": "pnpm --filter=example-vue-library-vue3 run dev",
+    "dev-vue2": "pnpm --filter=example-vue-library-vue2 run dev",
+    "build-all": "pnpm -r --aggregate-output run build",
+    "build-watch-all": "pnpm -r --stream run build:w",
+    "test-all": "pnpm -r --parallel --aggregate-output run test ",
     "lint": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}'",
     "lint:fix": "eslint '*.{js,ts}' '{lib-*}/**/*.{js,ts,vue}' --fix"
   },
