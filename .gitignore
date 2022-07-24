@@ -8,4 +8,6 @@ lib-vue2/typings
 lib-vue3/dist
 lib-vue3/typings
 
+tsconfig/logs
+
 *.local

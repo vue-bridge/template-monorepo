@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.vue2.lib.json",
+  "exclude": [],
+  "compilerOptions": {
+    "composite": true,
+    "lib": [],
+    "types": ["node", "jsdom"]
+  }
+}

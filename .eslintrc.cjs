@@ -7,6 +7,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:vue/vue3-essential',
+    // make sure to always include this plugin *after* plugin:vue to it can override rules
     '@vue-bridge/eslint-config',
   ],
   parserOptions: {

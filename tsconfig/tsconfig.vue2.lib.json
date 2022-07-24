@@ -1,0 +1,22 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "../lib-vue2/src/env.d.ts",
+    "../lib-vue2/src/**/*",
+    "../lib-vue2/src/**/*.vue"
+
+  ],
+  "exclude": [
+    "../lib-vue2/src/**/__tests__/*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "../lib-vue2/src",
+    "declarationDir": "../lib-vue2/typings",
+    "tsBuildInfoFile": "./logs/vue2.tsbuildinfo",
+    "jsx": "preserve",
+    "paths": {
+      "@vue-bridge/runtime": ["../lib-vue2/node_modules/@vue-bridge/runtime/dist-vue2/index.d.ts"]
+    }
+  }
+}

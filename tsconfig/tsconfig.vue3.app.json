@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.vue3.lib.json",
+  "include": [
+    "../lib-vue3/app/**/*",
+    "../lib-vue3/app/**/*.vue"
+  ],
+  "compilerOptions": {
+    "rootDir": "../lib-vue3/app",
+    "composite": true
+  }
+}

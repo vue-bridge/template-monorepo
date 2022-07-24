@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.vue2.lib.json",
+  "include": [
+    "../lib-vue2/app/**/*",
+    "../lib-vue2/app/**/*.vue"
+  ],
+  "compilerOptions": {
+    "rootDir": "../lib-vue2/app",
+    "composite": true
+  }
+}

@@ -1,16 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "skipLibCheck": true
-  },
-  "include": ["lib-*/src/**/*.{ts,tsx,js,jsx,vue}", "lib-*/src/**/*.d.ts", "lib-*/*.{js,ts}"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig/tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig/tsconfig.vue2.lib.json"
+    },
+    {
+      "path": "./tsconfig/tsconfig.vue2.app.json"
+    },
+    {
+      "path": "./tsconfig/tsconfig.vue2.vitest.json"
+    },
+    {
+      "path": "./tsconfig/tsconfig.vue3.lib.json"
+    },
+    {
+      "path": "./tsconfig/tsconfig.vue3.app.json"
+    },
+    {
+      "path": "./tsconfig/tsconfig.vue3.vitest.json"
+    }
+  ]
 }

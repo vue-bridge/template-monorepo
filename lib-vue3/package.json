@@ -6,7 +6,7 @@
     "build-watch": "vite build --watch",
     "build": "vite build && pnpm build-types",
     "tsc-watch": "vue-tsc --watch",
-    "build-types": "vue-tsc --emitDeclarationOnly",
+    "build-types": "vue-tsc --declaration --emitDeclarationOnly -p ../tsconfig/tsconfig.vue3.lib.json",
     "test": "vitest --reporter=verbose --run",
     "test-watch": "vitest --reporter=verbose",
     "preview": "vite preview"
