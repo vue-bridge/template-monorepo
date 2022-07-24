@@ -14,6 +14,19 @@ export default defineConfig({
     vueBridge({
       vueVersion: "2",
       localizeDeps: true,
+      useSwc: true,
+      swcOptions: {
+        env: {
+          mode: 'usage',
+        },
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: false,
+          },
+          loose: true,
+        },
+      }
     }),
   ],
   resolve: {

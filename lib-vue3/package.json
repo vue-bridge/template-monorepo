@@ -36,14 +36,14 @@
     "README.md"
   ],
   "dependencies": {
-    "@vue-bridge/runtime": "^0.1.1",
-    "vite": "^3.0.2"
+    "@vue-bridge/runtime": "^0.1.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.1",
-    "@vue-bridge/testing": "^0.2.0",
-    "@vue-bridge/vite-plugin": "^0.1.0",
+    "@vue-bridge/testing": "^0.2.1",
+    "@vue-bridge/vite-plugin": "^0.2.0",
     "@vue/test-utils": "^2.0.2",
+    "vite": "^3.0.2",
     "vue": "^3.2.37"
   }
 }
