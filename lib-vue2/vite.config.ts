@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { createVuePlugin as vue } from "vite-plugin-vue2";
+import vue from "@vitejs/plugin-vue2";
 import { vueBridge } from "@vue-bridge/vite-plugin";
 import { buildConfig } from "../vite.config.shared";
 
@@ -26,5 +26,8 @@ export default defineConfig({
   }),
   test: {
     environment: "jsdom",
+    deps: {
+      inline: true,
+    }
   },
 });

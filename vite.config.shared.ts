@@ -14,6 +14,8 @@ const defaults: Partial<VueBridgeBuildOptions> = {
 const fileExtensionMap = {
   es: 'mjs',
   cjs: 'cjs',
+  iife: 'js',
+  umd: 'js'
 };
 
 export const buildConfig = (_options: VueBridgeBuildOptions): UserConfig['build'] => {
@@ -27,21 +29,20 @@ export const buildConfig = (_options: VueBridgeBuildOptions): UserConfig['build'
       formats: ['es', 'cjs', 'umd'],
       name: options.name, // global variable name for IIFE build
       fileName: (format) =>
-        `index.${format}.${fileExtensionMap[format] ?? 'js'}`,
+        `index.${format}.${fileExtensionMap[format]}`,
     },
 
     rollupOptions: {
       output: {
-        exports: 'named', // this means your main.ts file should only have named exports!
+        exports: 'named', // this means your main.ts file should only have named exports, and no default export!
         // Add global names for externalized dependencies here.
         // IIFE needs to now how to access external deps like: `window.Vue`
         globals: {
           vue: 'Vue',
-          '@vue/composition-api': 'VueCompositionAPI',
           '@vue-bridge/runtime': 'VueBridge',
         },
       },
-      external: ['vue', '@vue-bridge/runtime', '@vue/composition-api'],
+      external: ['vue', '@vue-bridge/runtime'],
     },
   };
 };

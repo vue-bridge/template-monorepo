@@ -1,4 +1,5 @@
-import { mount, nextTick } from "@vue-bridge/testing";
+import { mount } from "@vue-bridge/testing";
+import { nextTick } from "vue";
 import { describe, it, expect } from "vitest";
 import Input from "../components/MyInput.vue";
 
@@ -8,8 +9,8 @@ describe("Input", () => {
 
     // mount() has the sameAPI as `@vue/test-utils@2` (for Vue 3)
     const wrapper = mount(Input, {
-      // @ts-ignore - would be propsData in normal vue 2 test-utils
       props: {
+        // @ts-ignore - would be propsData in normal vue 2 test-utils
         modelValue: "Hello World",
       },
     });
