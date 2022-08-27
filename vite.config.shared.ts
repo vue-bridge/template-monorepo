@@ -26,15 +26,19 @@ export const buildConfig = (_options: VueBridgeBuildOptions): UserConfig['build'
 
     lib: {
       entry: 'src/main.ts',
-      formats: ['es', 'cjs', 'umd'],
+      formats: ['es', 'cjs', 'iife'],
       name: options.name, // global variable name for IIFE build
-      fileName: (format) =>
-        `index.${format}.${fileExtensionMap[format]}`,
+      fileName: (f) => {
+        const format = f as keyof typeof fileExtensionMap
+        return `index.${format}.${fileExtensionMap[format]}`
+      },
     },
 
     rollupOptions: {
       output: {
-        exports: 'named', // this means your main.ts file should only have named exports, and no default export!
+        // this means your main.ts file should only have named exports, and no default export!
+        exports: 'named',
+        
         // Add global names for externalized dependencies here.
         // IIFE needs to now how to access external deps like: `window.Vue`
         globals: {
@@ -42,6 +46,8 @@ export const buildConfig = (_options: VueBridgeBuildOptions): UserConfig['build'
           '@vue-bridge/runtime': 'VueBridge',
         },
       },
+      // add any 3rd party packages that you do no want to have bundled in your library
+      // this *must* contain 'vue'
       external: ['vue', '@vue-bridge/runtime'],
     },
   };
