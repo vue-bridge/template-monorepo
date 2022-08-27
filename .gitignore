@@ -4,8 +4,10 @@ dist
 dist-ssr
 
 lib-vue2/dist
-lib-vue2/typings
 lib-vue3/dist
+# This is a symlink added in postinstall so we don't commit it
+lib-vue2/src
+lib-vue2/typings
 lib-vue3/typings
 
 tsconfig/logs
